@@ -99,7 +99,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     color="primary"
                     size="large"
                     type="submit"
-                    fullwidth>
+                    fullwidth="true">
                     Submit
                 </Button>
                 <Button
@@ -108,7 +108,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     color="secondary"
                     size="small"
                     onClick={clear}
-                    fullwidth>
+                    fullwidth="true">
                     Clear
                 </Button>
             </form>
