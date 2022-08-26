@@ -60,7 +60,7 @@ const Post = ({ post, setCurrentId }) => {
                     color="primary"
                     onClick={() => dispatch(likePost(post._id))}>
                     <ThumbUpAltIcon fontSize="small"></ThumbUpAltIcon>
-                    Like {post.likeCount}
+                    &nbsp; Like &nbsp; {post.likeCount}
                 </Button>
                 <Button
                     size="small"
