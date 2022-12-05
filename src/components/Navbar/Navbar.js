@@ -48,7 +48,9 @@ const Navbar = () => {
                         component={Link}
                         to="/auth"
                         variant="contained"
-                        color="primary"></Button>
+                        color="primary">
+                        Sign in
+                    </Button>
                 )}
             </Toolbar>
         </AppBar>
