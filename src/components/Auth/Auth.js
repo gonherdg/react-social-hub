@@ -7,9 +7,12 @@ import {
     Typography,
     Container,
 } from "@material-ui/core";
+import { GoogleLogin } from "@react-oauth/google";
+
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import useStyles from "./styles";
 import Input from "./Input";
+import Icon from "./icon";
 
 const Auth = () => {
     const classes = useStyles();
@@ -26,6 +29,22 @@ const Auth = () => {
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
         handleShowPassword(false);
+    };
+
+    const googleSuccess = async (res) => {
+        console.log(res);
+        const result = res?.profileObj;
+        const token = res?.tokenId;
+
+        try {
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const googleFailure = (error) => {
+        console.log(error);
+        console.log("Google Sign In was unsuccessful. Try Again Later");
     };
 
     return (
@@ -85,7 +104,30 @@ const Auth = () => {
                             className={classes.submit}>
                             {isSignup ? "Sign Up" : "Sign In"}
                         </Button>
-
+                        {false && (
+                            <GoogleLogin
+                                clientId="871267271584-csn1baa9c9b1gop2i56kgjklq4go9nfh.apps.googleusercontent.com"
+                                render={(renderProps) => (
+                                    <Button
+                                        className={classes.googleButton}
+                                        color="primary"
+                                        fullWidth
+                                        onClick={renderProps.onClick}
+                                        disabled={renderProps.disabled}
+                                        startIcon={<Icon />}
+                                        variant="contained">
+                                        Google Sign In
+                                    </Button>
+                                )}
+                                onSuccess={googleSuccess}
+                                onFailure={googleFailure}
+                                cookiePolicy="single_host_origin"
+                            />
+                        )}
+                        <GoogleLogin
+                            onSuccess={googleSuccess}
+                            onError={googleFailure}
+                        />
                         <Grid item>
                             <Button onClick={switchMode}>
                                 {isSignup
