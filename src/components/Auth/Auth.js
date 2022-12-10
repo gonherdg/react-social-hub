@@ -8,7 +8,9 @@ import {
     Container,
 } from "@material-ui/core";
 import { GoogleLogin } from "@react-oauth/google";
-
+import { useDispatch } from "react-redux";
+import jwt_decode from "jwt-decode";
+import { useHistory } from "react-router-dom";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import useStyles from "./styles";
 import Input from "./Input";
@@ -18,6 +20,8 @@ const Auth = () => {
     const classes = useStyles();
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleSubmit = () => {};
 
@@ -32,11 +36,12 @@ const Auth = () => {
     };
 
     const googleSuccess = async (res) => {
-        console.log(res);
-        const result = res?.profileObj;
-        const token = res?.tokenId;
-
+        console.log(res.credential);
+        const credential = res?.credential;
+        const userData = jwt_decode(credential);
         try {
+            dispatch({ type: "AUTH", data: userData });
+            history.push("/");
         } catch (error) {
             console.log(error);
         }
