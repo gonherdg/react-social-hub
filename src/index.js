@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDom from "react-dom/client";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose } from "redux";
+import {
+    legacy_createStore as createStore,
+    applyMiddleware,
+    compose,
+} from "redux";
 import thunk from "redux-thunk";
 import "./index.css";
 
