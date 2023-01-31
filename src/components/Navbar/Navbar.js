@@ -23,7 +23,15 @@ const Navbar = () => {
     };
 
     useEffect(() => {
-        setUser(JSON.parse(localStorage.getItem("profile")));
+        const profile = JSON.parse(localStorage.getItem("profile"));
+        if (profile?.result !== undefined) {
+            setUser(profile.result);
+            console.log(profile.result);
+        } else {
+            setUser(profile);
+            console.log(profile);
+        }
+        console.log("_> " + user);
     }, [location]);
 
     return (
@@ -46,14 +54,24 @@ const Navbar = () => {
             <Toolbar className={classes.toolbar}>
                 {user ? (
                     <div className={classes.profile}>
-                        <Avatar
-                            className={classes.purple}
-                            alt={user.given_name}
-                            src={user.picture.toString()}>
-                            {user.given_name.charAt(0)}
-                        </Avatar>
+                        {user.sub !== undefined && (
+                            <Avatar
+                                className={classes.purple}
+                                alt={user.given_name}
+                                src={user.picture}>
+                                {user.given_name.charAt(0)}
+                            </Avatar>
+                        )}
+                        {user.sub === undefined && (
+                            <Avatar className={classes.purple} alt={user.name}>
+                                {user.name?.charAt(0)
+                                    ? user.name.charAt(0)
+                                    : user.name}
+                            </Avatar>
+                        )}
                         <Typography className={classes.userName} variant="h6">
-                            {user.given_name}
+                            {user.sub !== undefined && user.given_name}
+                            {user.sub === undefined && user.name}
                         </Typography>
                         <Button
                             variant="contained"
