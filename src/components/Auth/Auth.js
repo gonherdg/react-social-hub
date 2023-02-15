@@ -56,9 +56,11 @@ const Auth = () => {
     };
 
     const googleSuccess = async (res) => {
-        console.log(res.credential);
+        // console.log(res.credential);  This returns an encoded value that includes all the user data
         const credential = res?.credential;
-        const userData = jwt_decode(credential);
+        let userData = jwt_decode(credential);
+        userData.token = credential; // This is to add the same credential already encoded as a jwt as a token for later use in transactions.
+        console.log(userData);
         try {
             dispatch({ type: "AUTH", data: userData });
             history.push("/");
