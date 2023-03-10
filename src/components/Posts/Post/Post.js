@@ -9,16 +9,52 @@ import {
     Typography,
 } from "@material-ui/core";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+import ThumbUpAltOutlined from "@material-ui/icons/ThumbUpAltOutlined";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 
 import { deletePost, likePost } from "../../../actions/posts";
+import ThumbUpAlt from "@material-ui/icons/ThumbUpAlt";
 
 const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
+    const user = JSON.parse(localStorage.getItem("profile"));
+
+    console.log(post.likes.length);
+
+    const Likes = () => {
+        if (post.likes.length > 0) {
+            return post.likes.find(
+                (like) => like === (user?.result?.googleId || user?.result?._id)
+            ) ? (
+                <>
+                    <ThumbUpAltIcon fontSize="small" />
+                    &nbsp;
+                    {post.likes.length > 2
+                        ? `You and ${post.likes.length - 1} others`
+                        : `${post.likes.length} like${
+                              post.likes.length > 1 ? "s" : ""
+                          }`}
+                </>
+            ) : (
+                <>
+                    <ThumbUpAltOutlined fontSize="small" />
+                    &nbsp;{post.likes.length}{" "}
+                    {post.likes.length === 1 ? "Like" : "Likes"}
+                </>
+            );
+        }
+
+        return (
+            <>
+                <ThumbUpAltOutlined fontSize="small" />
+                &nbsp; Like
+            </>
+        );
+    };
 
     return (
         <Card className={classes.card}>
@@ -58,9 +94,9 @@ const Post = ({ post, setCurrentId }) => {
                 <Button
                     size="small"
                     color="primary"
+                    disabled={!user?.result && !user}
                     onClick={() => dispatch(likePost(post._id))}>
-                    <ThumbUpAltIcon fontSize="small"></ThumbUpAltIcon>
-                    &nbsp; Like &nbsp; {post.likeCount}
+                    <Likes />
                 </Button>
                 <Button
                     size="small"
