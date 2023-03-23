@@ -4,7 +4,10 @@ import { AppBar, Typography, Toolbar, Button, Avatar } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 import memories from "../../images/picnic.png";
+import friendshipIcon from "../../images/friendship.png";
 import useStyles from "./styles";
+import "../../index.css";
+import "./style.css";
 
 const Navbar = () => {
     const classes = useStyles();
@@ -46,19 +49,40 @@ const Navbar = () => {
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.brandContainer}>
-                <Typography
-                    component={Link}
-                    to="/"
-                    className={classes.heading}
-                    variant="h2"
-                    align="center">
-                    Memories
-                </Typography>
                 <img
                     className={classes.image}
-                    src={memories}
+                    src={friendshipIcon}
                     alt="memories"
                     height="60"></img>
+                {
+                    !(
+                        <div className="units">
+                            <div>Social Hub</div>
+                            <div>Social Hub</div>
+                            {
+                                !(
+                                    <Typography
+                                        component={Link}
+                                        to="/"
+                                        className="h1"
+                                        variant="h2"
+                                        align="center">
+                                        Social Hub
+                                    </Typography>
+                                )
+                            }
+                        </div>
+                    )
+                }
+                <div className="sep">
+                    <Typography
+                        component={Link}
+                        to="/"
+                        className="h1"
+                        variant="h2">
+                        Social Hub
+                    </Typography>
+                </div>
             </div>
             <Toolbar className={classes.toolbar}>
                 {user ? (

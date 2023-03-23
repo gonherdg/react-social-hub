@@ -1,0 +1,130 @@
+.test {
+    color: red;
+}
+
+.units {
+    color: blue;
+	width: max-content;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	pointer-events: none;
+	padding: 0px 0px 0px 30px;
+    margin-bottom: -60px;
+}
+
+/* original design */
+.units > * {
+	font: bolder 5rem/5rem "EB Garamond";
+	background-image: url("../../images/friendship.png");
+	-webkit-background-clip: text;
+	color: transparent;
+	overflow: hidden;
+}
+/* reflections */
+.units > :last-child {
+	transform: rotatex(180deg) translatey(28px);
+}
+
+.units:first-of-type > :last-child {
+	--gradient: linear-gradient(transparent 50%, white 99%);
+	-webkit-mask-image: var(--gradient);
+	mask-image: var(--gradient);
+}
+.units:nth-of-type(2) > :last-child {
+	--gradient: repeating-linear-gradient(
+			transparent,
+			transparent 3px,
+			white 3px,
+			white 4px
+		),
+		linear-gradient(transparent 50%, white 99%);
+	-webkit-mask-image: var(--gradient);
+	mask-image: var(--gradient);
+}
+.units:nth-of-type(3) > :last-child {
+	transform: rotatex(180deg) translatey(15px) skew(135deg) translatex(30px);
+	--gradient: linear-gradient(transparent 50%, white 99%);
+	-webkit-mask-image: var(--gradient);
+	mask-image: var(--gradient);
+}
+.units:nth-of-type(4) > :last-child {
+	filter: blur(10px) brightness(1.5);
+}
+
+.units:nth-of-type(5) > :last-child {
+	filter: blur(4px);
+	--gradient: linear-gradient(transparent 50%, white 90%);
+	-webkit-mask-image: var(--gradient);
+	mask-image: var(--gradient);
+}
+.units:nth-of-type(6) > :last-child {
+	--gradient: radial-gradient(circle at center, white, transparent 50%);
+	-webkit-mask-image: var(--gradient);
+	mask-image: var(--gradient);
+}
+.units:nth-of-type(7) > :last-child {
+	--gradient: linear-gradient(transparent 50%, white 90%);
+	-webkit-mask-image: var(--gradient);
+	mask-image: var(--gradient);
+	text-shadow: 0 0 8px rgba(255, 0, 0, 0.4), -2px -2px 6px rgba(0, 255, 0, 0.4),
+		2px 2px 4px rgba(0, 255, 255, 0.4);
+	background-image: unset;
+}
+.units:nth-of-type(8) > :last-child {
+	opacity: 0.2;
+}
+
+@media (max-width: 480px) {
+	.units > * {
+		font: bolder 3.5rem/3.5rem "EB Garamond";
+	}
+	.units:nth-of-type(3) > :last-child {
+		transform: rotatex(180deg) translatey(15px) skew(135deg) translatex(18px);
+	}
+}
+
+
+
+
+
+@use postcss-preset-env {
+    stage: 0;
+  }
+  
+  :root {
+    --color-background: #000119;
+    --color_background2: #FFF;
+    --stroke-width: calc(1em / 12);
+    --font-size: 60px;
+    --font-weight: 700;
+    --letter-spacing: calc(1em / 2);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .sep {
+    background-color: var(--color-background2);
+    display: grid;
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    max-height: 200px;
+    width: 310px;
+    place-items: center;
+    padding-left: 0vmin;
+  }
+  
+  .h1 {
+    text-decoration: none;
+    background-clip: text;
+    background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    color: var(--color-background);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    letter-spacing: var(--letter-spacing);
+    padding: calc(--stroke-width / 2);
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: var(--stroke-width);
+  }
