@@ -28,7 +28,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const token = user?.token;
-        console.log("user token: ", token, " ", user);
+        //console.log("user token: ", token, " ", user);
         if (token) {
             const decodedToken = decode(token);
 
