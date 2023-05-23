@@ -125,7 +125,7 @@ const Auth = () => {
                         )}
                         <Button
                             type="submit"
-                            fullWidth
+                            fullwidth="true"
                             variant="contained"
                             color="primary"
                             className={classes.submit}>
@@ -138,7 +138,7 @@ const Auth = () => {
                                     <Button
                                         className={classes.googleButton}
                                         color="primary"
-                                        fullWidth
+                                        fullwidth="true"
                                         onClick={renderProps.onClick}
                                         disabled={renderProps.disabled}
                                         startIcon={<Icon />}

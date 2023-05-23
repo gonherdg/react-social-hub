@@ -79,7 +79,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     name="title"
                     variant="outlined"
                     label="Title"
-                    fullWidth
+                    fullwidth="true"
                     value={postData.title}
                     onChange={(e) =>
                         setPostData({ ...postData, title: e.target.value })
@@ -89,7 +89,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     name="message"
                     variant="outlined"
                     label="Message"
-                    fullWidth
+                    fullwidth="true"
                     value={postData.message}
                     onChange={(e) =>
                         setPostData({ ...postData, message: e.target.value })
@@ -99,7 +99,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     name="tags"
                     variant="outlined"
                     label="Tags"
-                    fullWidth
+                    fullwidth="true"
                     value={postData.tags}
                     onChange={(e) =>
                         setPostData({

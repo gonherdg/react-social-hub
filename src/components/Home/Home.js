@@ -35,10 +35,6 @@ const Home = () => {
     const [search, setSearch] = useState("");
     const [tags, setTags] = useState([]);
 
-    useEffect(() => {
-        dispatch(getPosts());
-    }, [currentId, dispatch]);
-
     const searchPost = () => {
         if (search.trim() || tags.length > 0) {
             // dispatch -> fetch search post
@@ -87,7 +83,7 @@ const Home = () => {
                                 variant="outlined"
                                 label="Search Memories"
                                 onKeyPress={handleKeyPress}
-                                fullwidth
+                                fullWidth
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
                             />
@@ -112,7 +108,7 @@ const Home = () => {
                             setCurrentId={setCurrentId}
                         />
                         <Paper elevation={6}>
-                            <Paginate />
+                            <Paginate page={page} />
                         </Paper>
                     </Grid>
                 </Grid>
