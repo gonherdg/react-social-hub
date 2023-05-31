@@ -8,6 +8,7 @@ import {
     DELETE,
     START_LOADING,
     END_LOADING,
+    COMMENT,
 } from "../constants/actionTypes";
 
 const postsReducer = (state = { isLoading: true, posts: [] }, action) => {
@@ -55,6 +56,16 @@ const postsReducer = (state = { isLoading: true, posts: [] }, action) => {
                 posts: state.posts.filter(
                     (post) => post._id !== action.payload
                 ),
+            };
+        case COMMENT:
+            return {
+                ...state,
+                posts: state.posts.map((post) => {
+                    if (post._id === action.payload._id) {
+                        return action.payload;
+                    }
+                    return post;
+                }),
             };
 
         default:
