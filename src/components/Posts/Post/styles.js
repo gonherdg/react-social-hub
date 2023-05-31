@@ -49,4 +49,7 @@ export default makeStyles({
         display: "flex",
         justifyContent: "space-between",
     },
+    cardActions_b: {
+        cursor: "pointer",
+    },
 });
