@@ -36,6 +36,7 @@ const Navbar = () => {
         }
 
         const profile = JSON.parse(localStorage.getItem("profile"));
+        console.log("profile: ", profile);
         if (profile?.result !== undefined) {
             setUser(profile.result);
             //console.log(profile.result);
@@ -43,7 +44,7 @@ const Navbar = () => {
             setUser(profile);
             //console.log(profile);
         }
-        //console.log("_> " + user);
+        console.log("_> " + user);
     }, [location]);
 
     return (

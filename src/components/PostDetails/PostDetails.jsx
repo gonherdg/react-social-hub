@@ -25,7 +25,7 @@ const PostDetails = () => {
         }
     }, [post]);
 
-    const recommendedPosts = posts.filter(({_id}) => _id !== post._id);
+    const recommendedPosts = posts.filter(({_id}) => _id !== post?._id);
 
     const openPost = (_id) => history.push(`/posts/${_id}`);
 

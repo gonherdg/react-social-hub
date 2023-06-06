@@ -13,7 +13,12 @@ import reducers from "./reducers";
 
 import App from "./App";
 
-const store = createStore(reducers, compose(applyMiddleware(thunk)));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(
+    reducers,
+    compose(applyMiddleware(thunk), composeEnhancers())
+);
 
 const root = ReactDom.createRoot(document.getElementById("root"));
 root.render(
