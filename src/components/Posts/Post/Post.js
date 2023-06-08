@@ -47,7 +47,7 @@ const Post = ({ post, setCurrentId }) => {
 
     useEffect(() => {
         //if (userId) console.log(userId);
-        console.log(post.title, likes);
+        //console.log(post.title, likes);
     }, []);
 
     const Likes = () => {

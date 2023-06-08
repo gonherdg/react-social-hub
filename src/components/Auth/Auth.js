@@ -60,7 +60,7 @@ const Auth = () => {
         const credential = res?.credential;
         let userData = jwt_decode(credential);
         userData.token = credential; // This is to add the same credential already encoded as a jwt as a token for later use in transactions.
-        console.log(userData);
+        //console.log(userData);
         try {
             dispatch({ type: "AUTH", data: userData });
             history.push("/");
