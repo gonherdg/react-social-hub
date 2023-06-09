@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-social-hub/static/css/main.75c32ae6.css",
+    "main.js": "/react-social-hub/static/js/main.706c4085.js",
+    "static/media/picnic.png": "/react-social-hub/static/media/picnic.c7576cdfaa431ffce5dd.png",
+    "static/media/friendship.png": "/react-social-hub/static/media/friendship.6b5f83b50a84081a05b9.png",
+    "index.html": "/react-social-hub/index.html",
+    "main.75c32ae6.css.map": "/react-social-hub/static/css/main.75c32ae6.css.map",
+    "main.706c4085.js.map": "/react-social-hub/static/js/main.706c4085.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.75c32ae6.css",
+    "static/js/main.706c4085.js"
+  ]
+}
