@@ -1,6 +1,11 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5000" });
+// const API = axios.create({ baseURL: "http://localhost:5000" });  // Local development
+// https://1ljmxxotee.execute-api.us-east-1.amazonaws.com/      // AWS Lambda serverless
+// http://localhost:9000/.netlify/functions/api         // Netlify Lambda serverless
+const API = axios.create({
+    baseURL: "https://1ljmxxotee.execute-api.us-east-1.amazonaws.com/",
+});
 
 API.interceptors.request.use((req) => {
     if (localStorage.getItem("profile")) {
