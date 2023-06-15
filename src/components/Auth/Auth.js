@@ -88,14 +88,14 @@ const Auth = () => {
                         {isSignup && (
                             <>
                                 <Input
-                                    name="given_name"
+                                    name="firstName"
                                     label="First Name"
                                     handleChange={handleChange}
                                     autofocus
                                     half
                                 />
                                 <Input
-                                    name="family_name"
+                                    name="lastName"
                                     label="Last Name"
                                     handleChange={handleChange}
                                     half
