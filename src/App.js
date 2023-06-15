@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "@material-ui/core";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import Navbar from "./components/Navbar/Navbar";
@@ -13,7 +13,7 @@ const App = () => {
 
     return (
         <GoogleOAuthProvider clientId="871267271584-csn1baa9c9b1gop2i56kgjklq4go9nfh.apps.googleusercontent.com">
-            <BrowserRouter>
+            <HashRouter>
                 <Container maxWidth="xl">
                     <Navbar />
                     <Switch>
@@ -34,7 +34,7 @@ const App = () => {
                         />
                     </Switch>
                 </Container>
-            </BrowserRouter>
+            </HashRouter>
         </GoogleOAuthProvider>
     );
 };
