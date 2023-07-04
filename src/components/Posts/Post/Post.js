@@ -48,6 +48,9 @@ const Post = ({ post, setCurrentId }) => {
     useEffect(() => {
         //if (userId) console.log(userId);
         //console.log(post.title, likes);
+        if (post.thumbnail) {
+            console.log("POST THUMBNAIL: ", post.title);
+        }
     }, []);
 
     const Likes = () => {
@@ -83,7 +86,7 @@ const Post = ({ post, setCurrentId }) => {
             <div className={classes.cardActions_b} onClick={openPost}>
                 <CardMedia
                     className={classes.media}
-                    image={post.selectedFile}
+                    image={post.thumbnail ? post.thumbnail : post.selectedFile}
                     title={post.title}
                 />
                 <div className={classes.overlay}>
