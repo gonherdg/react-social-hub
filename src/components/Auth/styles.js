@@ -21,10 +21,24 @@ export default makeStyles((theme) => ({
         width: "100%", // Fix IE 11 issue.
         marginTop: theme.spacing(3),
     },
-    submit: {
-        margin: theme.spacing(3, 0, 2),
-    },
+    submit: {},
     googleButton: {
-        marginBottom: theme.spacing(2),
+        maxWidth: "70%",
+    },
+
+    signinBlock: {
+        width: "100%",
+        height: 130,
+        margin: theme.spacing(3, 0, 3),
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "center",
+    },
+    hbar: {
+        heigth: 10,
+        padding: 1,
+        width: "90%",
+        backgroundColor: "#ccc",
     },
 }));

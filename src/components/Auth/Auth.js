@@ -123,14 +123,22 @@ const Auth = () => {
                                 type="password"
                             />
                         )}
-                        <Button
-                            type="submit"
-                            fullwidth="true"
-                            variant="contained"
-                            color="primary"
-                            className={classes.submit}>
-                            {isSignup ? "Sign Up" : "Sign In"}
-                        </Button>
+                        <div className={classes.signinBlock}>
+                            <Button
+                                type="submit"
+                                fullwidth="true"
+                                variant="contained"
+                                color="primary"
+                                className={classes.submit}>
+                                {isSignup ? "Sign Up" : "Sign In"}
+                            </Button>
+                            <div className={classes.hbar}></div>
+                            <GoogleLogin
+                                className={classes.googleButton}
+                                onSuccess={googleSuccess}
+                                onError={googleFailure}
+                            />
+                        </div>
                         {false && (
                             <GoogleLogin
                                 clientId="871267271584-csn1baa9c9b1gop2i56kgjklq4go9nfh.apps.googleusercontent.com"
@@ -151,10 +159,7 @@ const Auth = () => {
                                 cookiePolicy="single_host_origin"
                             />
                         )}
-                        <GoogleLogin
-                            onSuccess={googleSuccess}
-                            onError={googleFailure}
-                        />
+
                         <Grid item>
                             <Button onClick={switchMode}>
                                 {isSignup

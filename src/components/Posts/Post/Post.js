@@ -49,7 +49,7 @@ const Post = ({ post, setCurrentId }) => {
         //if (userId) console.log(userId);
         //console.log(post.title, likes);
         if (post.thumbnail) {
-            console.log("POST THUMBNAIL: ", post.title);
+            //console.log("POST THUMBNAIL: ", post.title);
         }
     }, []);
 
