@@ -70,6 +70,16 @@ const Home = () => {
                     alignItems="stretch"
                     spacing={3}
                     className={classes.gridContainer}>
+                    {
+                        // This Pagniate goes at the bottom of a device's screen. It's here because of a flex-column-reverse. Maybe fix in the future.
+                        !searchQuery && !tags.length && (
+                            <Paper
+                                elevation={6}
+                                className={classes.paginationBottom}>
+                                <Paginate page={page} />
+                            </Paper>
+                        )
+                    }
                     <Grid item spacing={2} xs={12} sm={12} md={9}>
                         <Posts setCurrentId={setCurrentId}></Posts>
                     </Grid>

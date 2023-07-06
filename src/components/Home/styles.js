@@ -24,7 +24,15 @@ export default makeStyles((theme) => ({
     pagination: {
         borderRadius: 4,
         marginTop: "1rem",
-        padding: "16px",
+        padding: "12px",
+    },
+    paginationBottom: {
+        borderRadius: 4,
+        marginTop: "1rem",
+        padding: "12px",
+        [theme.breakpoints.up("md")]: {
+            display: "none",
+        },
     },
     gridContainer: {
         [theme.breakpoints.down("xs")]: {
@@ -37,7 +45,7 @@ export default makeStyles((theme) => ({
 
     appBar: {
         borderRadius: 15,
-        margin: "20px 0",
+        margin: "30px 0",
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
