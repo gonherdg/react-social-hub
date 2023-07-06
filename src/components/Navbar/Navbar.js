@@ -22,6 +22,8 @@ const Navbar = () => {
     const location = useLocation();
     const { showSearchWindow } = useSelector((state) => state.misc);
 
+    const currentPage = window.location.href.split("/").at(-1);
+
     const logout = () => {
         dispatch({ type: LOGOUT });
 
@@ -94,11 +96,15 @@ const Navbar = () => {
                 </div>
             </div>
             <Toolbar className={classes.toolbar}>
-                <SearchOutlinedIcon
-                    className={
-                        !showSearchWindow ? classes.glass : classes.activeGlass
-                    }
-                    onClick={glassClick}></SearchOutlinedIcon>
+                {currentPage === "posts" && (
+                    <SearchOutlinedIcon
+                        className={
+                            !showSearchWindow
+                                ? classes.glass
+                                : classes.activeGlass
+                        }
+                        onClick={glassClick}></SearchOutlinedIcon>
+                )}
                 {user ? (
                     <div className={classes.profile}>
                         {user.sub !== undefined && (
