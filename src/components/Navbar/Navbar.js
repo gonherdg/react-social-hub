@@ -50,11 +50,13 @@ const Navbar = () => {
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.brandContainer}>
-                <img
-                    className={classes.image}
-                    src={friendshipIcon}
-                    alt="memories"
-                    height="60"></img>
+                <Typography component={Link} to="/">
+                    <img
+                        className={classes.image}
+                        src={friendshipIcon}
+                        alt="memories"
+                        height="60"></img>
+                </Typography>
                 {
                     !(
                         <div className="units">
@@ -76,15 +78,9 @@ const Navbar = () => {
                     )
                 }
                 <div className={classes.sep}>
-                    <div className="sep">
-                        <Typography
-                            component={Link}
-                            to="/"
-                            className="h1"
-                            variant="h2">
-                            Social Hub
-                        </Typography>
-                    </div>
+                    <Typography className="sep" component={Link} to="/">
+                        <div className="h1">Social Hub</div>
+                    </Typography>
                 </div>
             </div>
             <Toolbar className={classes.toolbar}>

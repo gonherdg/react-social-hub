@@ -5,7 +5,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 export default makeStyles((theme) => ({
     appBar: {
         borderRadius: 15,
-        margin: "30px 0",
+        margin: "15px 0",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -19,11 +19,13 @@ export default makeStyles((theme) => ({
     },
     image: {
         marginLeft: "0px",
+        marginTop: "7px",
     },
     toolbar: {
         display: "flex",
+        flexBasis: 0.2,
         justifyContent: "flex-end",
-        width: "400px",
+        minWidth: "150px",
     },
     profile: {
         display: "flex",
