@@ -42,8 +42,10 @@ export default makeStyles((theme) => ({
         },
     },
     sep: {
+        maxHeight: "72px",
         [theme.breakpoints.down("xs")]: {
             visibility: "hidden",
+            width: "10px",
         },
     },
     purple: {

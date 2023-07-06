@@ -110,10 +110,10 @@
     display: grid;
     font-family: Poppins, sans-serif;
     margin: 0;
-    max-height: 200px;
-    width: 310px;
+    max-height: 200px; 
     place-items: center;
     padding-left: 0vmin;
+    min-width: 310px; 
   }
   
   .h1 {
@@ -130,10 +130,16 @@
   }
 
 
-  @media screen and (max-width: 480 ){
+  @media screen and (max-width: 480px )
+  {
     .units {
       width: 0;
       height: 0;
       color: 0;
+    }
+    
+    .sep {
+      visibility: hidden;
+      min-width: 10px; 
     }
   }
