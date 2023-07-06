@@ -8,7 +8,7 @@ import {
     TextField,
     Button,
 } from "@material-ui/core";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import ChipInput from "material-ui-chip-input";
 
@@ -34,6 +34,7 @@ const Home = () => {
     const classes = useStyles();
     const [search, setSearch] = useState("");
     const [tags, setTags] = useState([]);
+    const { showSearchWindow } = useSelector((state) => state.misc);
 
     const searchPost = () => {
         if (search.trim() || tags.length > 0) {
@@ -88,37 +89,52 @@ const Home = () => {
                         xs={12}
                         sm={12}
                         md={3}
-                        className={classes.appBarContainer}>
-                        <AppBar
-                            className={classes.appBarSearch}
-                            position="static"
-                            color="inherit">
-                            <TextField
-                                name="search"
-                                variant="outlined"
-                                label="Search Memories"
-                                onKeyPress={handleKeyPress}
-                                fullWidth
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                            />
-                            <ChipInput
-                                style={{ margin: "10px 0" }}
-                                value={tags}
-                                onAdd={handleAdd}
-                                onDelete={handleDelete}
-                                label="Search Tags"
-                                variant="outlined"
-                            />
-                            <Button
-                                onClick={searchPost}
-                                className={classes.searchButton}
-                                variant="contained"
-                                color="primary">
-                                Search
-                            </Button>
-                        </AppBar>
-                        <div className={classes.rightPart}>
+                        className={
+                            showSearchWindow
+                                ? classes.appBarContainer
+                                : classes.appBarContainerNoSearchBar
+                        }>
+                        {
+                            <AppBar
+                                className={
+                                    showSearchWindow
+                                        ? classes.appBarSearch
+                                        : classes.appBarSearchHide
+                                }
+                                position="static"
+                                color="inherit">
+                                <TextField
+                                    name="search"
+                                    variant="outlined"
+                                    label="Search Memories"
+                                    onKeyPress={handleKeyPress}
+                                    fullWidth
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                />
+                                <ChipInput
+                                    style={{ margin: "10px 0" }}
+                                    value={tags}
+                                    onAdd={handleAdd}
+                                    onDelete={handleDelete}
+                                    label="Search Tags"
+                                    variant="outlined"
+                                />
+                                <Button
+                                    onClick={searchPost}
+                                    className={classes.searchButton}
+                                    variant="contained"
+                                    color="primary">
+                                    Search
+                                </Button>
+                            </AppBar>
+                        }
+                        <div
+                            className={
+                                !showSearchWindow
+                                    ? classes.rightPart
+                                    : classes.rightPartNoSearch
+                            }>
                             <Form
                                 currentId={currentId}
                                 setCurrentId={setCurrentId}

@@ -5,7 +5,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 export default makeStyles((theme) => ({
     appBar: {
         borderRadius: 15,
-        margin: "15px 0",
+        margin: "15px 0px",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -25,16 +25,21 @@ export default makeStyles((theme) => ({
         display: "flex",
         flexBasis: 0.2,
         justifyContent: "flex-end",
-        minWidth: "150px",
+        minWidth: "200px",
     },
     profile: {
         display: "flex",
         justifyContent: "space-between",
-        width: "400px",
     },
     userName: {
         display: "flex",
         alignItems: "center",
+        [theme.breakpoints.down("sm")]: {
+            display: "none",
+        },
+        [theme.breakpoints.up("md")]: {
+            marginRight: "20px",
+        },
     },
     brandContainer: {
         display: "flex",
@@ -53,6 +58,9 @@ export default makeStyles((theme) => ({
     purple: {
         color: theme.palette.getContrastText(deepPurple[500]),
         backgroundColor: deepPurple[500],
+        [theme.breakpoints.up("md")]: {
+            marginRight: "20px",
+        },
     },
     signIn: {
         backgroundColor: "#FFF",
@@ -63,6 +71,38 @@ export default makeStyles((theme) => ({
         },
         "&:focus": {
             backgroundColor: "#FFF",
+        },
+    },
+    glass: {
+        color: "#3F51B5",
+        marginRight: "16px",
+        width: "35px",
+        height: "35px",
+        padding: "5px",
+        [theme.breakpoints.up("md")]: {
+            visibility: "hidden",
+        },
+    },
+    activeGlass: {
+        color: "#FFF",
+        backgroundColor: "#3F51B5",
+        borderRadius: "12px",
+        marginRight: "16px",
+        width: "35px",
+        height: "35px",
+        padding: "5px",
+        [theme.breakpoints.up("md")]: {
+            visibility: "hidden",
+        },
+    },
+    logout: {
+        color: "#f50057",
+        fontSize: "13px",
+        padding: "4px",
+    },
+    hideXS: {
+        [theme.breakpoints.down("sm")]: {
+            display: "none",
         },
     },
 }));

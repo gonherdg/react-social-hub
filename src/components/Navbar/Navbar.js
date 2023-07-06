@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { AppBar, Typography, Toolbar, Button, Avatar } from "@material-ui/core";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { LOGOUT, SHOW_SEARCH_WINDOW } from "../../constants/actionTypes";
 import decode from "jwt-decode";
 import memories from "../../images/picnic.png";
 import friendshipIcon from "../../images/friendship.png";
+import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
+import LogoutOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
 import useStyles from "./styles";
 import "../../index.css";
 import "./style.css";
@@ -17,13 +20,20 @@ const Navbar = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const location = useLocation();
+    const { showSearchWindow } = useSelector((state) => state.misc);
 
     const logout = () => {
-        dispatch({ type: "LOGOUT" });
+        dispatch({ type: LOGOUT });
 
         history.push("/");
 
         setUser(null);
+    };
+
+    const glassClick = () => {
+        //console.log("DISPATCH: ", !showSearchWindow);
+        dispatch({ type: SHOW_SEARCH_WINDOW, data: !showSearchWindow });
+        //console.log("FIN: ", showSearchWindow);
     };
 
     useEffect(() => {
@@ -84,6 +94,11 @@ const Navbar = () => {
                 </div>
             </div>
             <Toolbar className={classes.toolbar}>
+                <SearchOutlinedIcon
+                    className={
+                        !showSearchWindow ? classes.glass : classes.activeGlass
+                    }
+                    onClick={glassClick}></SearchOutlinedIcon>
                 {user ? (
                     <div className={classes.profile}>
                         {user.sub !== undefined && (
@@ -105,12 +120,9 @@ const Navbar = () => {
                             {user.sub !== undefined && user.given_name}
                             {user.sub === undefined && user.name}
                         </Typography>
-                        <Button
-                            variant="contained"
-                            className={classes.logout}
-                            color="secondary"
-                            onClick={logout}>
-                            Logout
+                        <Button className={classes.logout} onClick={logout}>
+                            <span className={classes.hideXS}>Logout</span>
+                            <LogoutOutlinedIcon />
                         </Button>
                     </div>
                 ) : (
