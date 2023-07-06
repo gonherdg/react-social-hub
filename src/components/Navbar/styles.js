@@ -52,4 +52,15 @@ export default makeStyles((theme) => ({
         color: theme.palette.getContrastText(deepPurple[500]),
         backgroundColor: deepPurple[500],
     },
+    signIn: {
+        backgroundColor: "#FFF",
+        color: "#3F51B5",
+        "&:active": {
+            backgroundColor: "#3F51B5",
+            color: "#FFF",
+        },
+        "&:focus": {
+            backgroundColor: "#FFF",
+        },
+    },
 }));

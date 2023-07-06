@@ -80,7 +80,7 @@ const Auth = () => {
                 <Avatar className={classes.avatar}>
                     <LockOutlinedIcon />
                 </Avatar>
-                <Typography variant="h5">
+                <Typography className={classes.signInButton} variant="h5">
                     {isSignup ? "Sign up" : "Sign in"}
                 </Typography>
                 <form className={classes.form} onSubmit={handleSubmit}>

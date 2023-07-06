@@ -41,4 +41,12 @@ export default makeStyles((theme) => ({
         width: "90%",
         backgroundColor: "#ccc",
     },
+    signInButton: {
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "19px",
+        },
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "16px",
+        },
+    },
 }));

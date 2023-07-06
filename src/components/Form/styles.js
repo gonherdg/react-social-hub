@@ -22,4 +22,10 @@ export default makeStyles((theme) => ({
         marginBottom: 10,
         width: "100%",
     },
+    pleaseSignIn: {
+        fontSize: "16px",
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "13px",
+        },
+    },
 }));

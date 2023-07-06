@@ -10,7 +10,7 @@ const API_AWS = axios.create({
     baseURL: "https://1ljmxxotee.execute-api.us-east-1.amazonaws.com/",
 });
 
-let API = API_TEST;
+let API = API_AWS;
 
 API.interceptors.request.use((req) => {
     if (localStorage.getItem("profile")) {

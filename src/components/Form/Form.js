@@ -59,7 +59,10 @@ const Form = ({ currentId, setCurrentId }) => {
     if (!user?.result?.name && !user?.name) {
         return (
             <Paper className={classes.paper}>
-                <Typography variant="h6" align="center">
+                <Typography
+                    className={classes.pleaseSignIn}
+                    variant="h6"
+                    align="center">
                     Please Sign In to create your own posts and like other's
                     posts.
                 </Typography>

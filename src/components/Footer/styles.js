@@ -18,9 +18,15 @@ export default makeStyles((theme) => ({
     },
     text: {
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-        fontSize: "20px",
+        fontSize: "19px",
         color: theme.palette.grey[50],
         textDecoration: "none",
         margin: "8px",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "16px",
+        },
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "13px",
+        },
     },
 }));

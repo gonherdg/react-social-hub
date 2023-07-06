@@ -122,7 +122,8 @@ const Navbar = () => {
                         component={Link}
                         to="/auth"
                         variant="contained"
-                        color="primary">
+                        color="primary"
+                        className={classes.signIn}>
                         Sign in
                     </Button>
                 )}
