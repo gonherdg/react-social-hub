@@ -32,13 +32,13 @@ const PostDetails = () => {
     if (!post) return null;
 
     if(isLoading) {
-        return <Paper elevation={6} className={classes.loadingPaper}>
+        return <Paper elevation={3} className={classes.loadingPaper}>
             <CircularProgress size="7em" />
         </Paper>
     }
 
     return (
-    <Paper className={classes.paper} style={{ borderRadius: '15px' }} elevation={6}>
+    <Paper className={classes.paper} style={{ borderRadius: '15px' }} elevation={3}>
     <div className={classes.card}>
       <div className={classes.section}>
         <Typography className={classes.title} variant="h3" component="h2">{post.title}</Typography>

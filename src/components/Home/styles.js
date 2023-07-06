@@ -43,7 +43,7 @@ export default makeStyles((theme) => ({
     },
     pagination: {
         borderRadius: 4,
-        marginTop: "1rem",
+
         padding: "12px",
     },
     paginationBottom: {

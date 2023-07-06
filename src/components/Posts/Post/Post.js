@@ -82,7 +82,7 @@ const Post = ({ post, setCurrentId }) => {
     const openPost = () => history.push(`/posts/${post._id}`);
 
     return (
-        <Card className={classes.card} raised elevation={6}>
+        <Card className={classes.card} raised elevation={3}>
             <div className={classes.cardActions_b} onClick={openPost}>
                 <CardMedia
                     className={classes.media}

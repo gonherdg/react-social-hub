@@ -14,3 +14,4 @@ export const AUTH = "AUTH";
 export const LOGOUT = "LOGOUT";
 
 export const SHOW_SEARCH_WINDOW = "SHOW_SEARCH_WINDOW";
+export const SHOW_SIGNIN_MESSAGE = "SHOW_SIGNIN_MESSAGE";

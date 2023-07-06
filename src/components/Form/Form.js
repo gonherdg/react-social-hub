@@ -3,6 +3,8 @@ import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { SHOW_SIGNIN_MESSAGE } from "../../constants/actionTypes";
+import ClearOutlinedIcon from "@material-ui/icons/Close";
 
 import useStyles from "./styles";
 import { createPost, updatePost } from "../../actions/posts";
@@ -16,6 +18,9 @@ const Form = ({ currentId, setCurrentId }) => {
     });
     const post = useSelector((state) =>
         currentId ? state.posts.posts.find((p) => p._id === currentId) : null
+    );
+    const showSignInMessage = useSelector(
+        (state) => state.misc.showSignInMessage
     );
     const classes = useStyles();
     const user = JSON.parse(localStorage.getItem("profile"));
@@ -56,9 +61,13 @@ const Form = ({ currentId, setCurrentId }) => {
         });
     };
 
-    if (!user?.result?.name && !user?.name) {
+    const closeSignInMessageBox = () => {
+        dispatch({ type: SHOW_SIGNIN_MESSAGE, data: false });
+    };
+
+    if (!user?.result?.name && !user?.name && showSignInMessage) {
         return (
-            <Paper className={classes.paper}>
+            <Paper className={classes.paper} elevation={3}>
                 <Typography
                     className={classes.pleaseSignIn}
                     variant="h6"
@@ -66,12 +75,23 @@ const Form = ({ currentId, setCurrentId }) => {
                     Please Sign In to create your own posts and like other's
                     posts.
                 </Typography>
+                <div
+                    className={classes.pleaseSignInClose}
+                    onClick={closeSignInMessageBox}>
+                    <span>
+                        <ClearOutlinedIcon />
+                    </span>
+                </div>
             </Paper>
         );
     }
 
+    if (!user?.result?.name && !user?.name && !showSignInMessage) {
+        return;
+    }
+
     return (
-        <Paper className={classes.paper} elevation={6}>
+        <Paper className={classes.paper} elevation={3}>
             <form
                 autoComplete="off"
                 noValidate

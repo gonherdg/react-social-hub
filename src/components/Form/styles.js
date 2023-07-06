@@ -8,7 +8,9 @@ export default makeStyles((theme) => ({
         },
     },
     paper: {
-        padding: theme.spacing(2),
+        padding: theme.spacing(1),
+        marginBottom: 10,
+        display: "flex",
     },
     form: {
         display: "flex",
@@ -24,10 +26,19 @@ export default makeStyles((theme) => ({
         width: "100%",
     },
     pleaseSignIn: {
-        fontSize: "16px",
+        fontSize: "13px",
         color: grey[700],
+        textAlign: "center",
+        flex: 0.9,
+    },
+    pleaseSignInClose: {
+        cursor: "pointer",
+        alignSelf: "center",
+        textAlign: "center",
+        color: grey[700],
+        flex: 0.1,
         [theme.breakpoints.down("xs")]: {
-            fontSize: "13px",
+            fontSize: "16px",
         },
     },
 }));

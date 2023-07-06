@@ -75,7 +75,7 @@ const Home = () => {
                         // This Pagniate goes at the bottom of a device's screen. It's here because of a flex-column-reverse. Maybe fix in the future.
                         !searchQuery && !tags.length && (
                             <Paper
-                                elevation={6}
+                                elevation={3}
                                 className={classes.paginationBottom}>
                                 <Paginate page={page} />
                             </Paper>
@@ -141,7 +141,7 @@ const Home = () => {
                             />
                             {!searchQuery && !tags.length && (
                                 <Paper
-                                    elevation={6}
+                                    elevation={3}
                                     className={classes.pagination}>
                                     <Paginate page={page} />
                                 </Paper>
