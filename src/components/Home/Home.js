@@ -63,17 +63,22 @@ const Home = () => {
 
     return (
         <Grow in>
-            <Container maxWidth="xl">
+            <div maxWidth="xl">
                 <Grid
                     container
                     justifyContent="space-between"
                     alignItems="stretch"
                     spacing={3}
                     className={classes.gridContainer}>
-                    <Grid item xs={12} sm={6} md={9}>
+                    <Grid item spacing={2} xs={12} sm={12} md={9}>
                         <Posts setCurrentId={setCurrentId}></Posts>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid
+                        item
+                        xs={12}
+                        sm={12}
+                        md={3}
+                        className={classes.appBarContainer}>
                         <AppBar
                             className={classes.appBarSearch}
                             position="static"
@@ -103,18 +108,22 @@ const Home = () => {
                                 Search
                             </Button>
                         </AppBar>
-                        <Form
-                            currentId={currentId}
-                            setCurrentId={setCurrentId}
-                        />
-                        {!searchQuery && !tags.length && (
-                            <Paper elevation={6} className={classes.pagination}>
-                                <Paginate page={page} />
-                            </Paper>
-                        )}
+                        <div className={classes.rightPart}>
+                            <Form
+                                currentId={currentId}
+                                setCurrentId={setCurrentId}
+                            />
+                            {!searchQuery && !tags.length && (
+                                <Paper
+                                    elevation={6}
+                                    className={classes.pagination}>
+                                    <Paginate page={page} />
+                                </Paper>
+                            )}
+                        </div>
                     </Grid>
                 </Grid>
-            </Container>
+            </div>
         </Grow>
     );
 };

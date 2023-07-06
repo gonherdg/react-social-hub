@@ -128,3 +128,12 @@
     -webkit-text-stroke-color: transparent;
     -webkit-text-stroke-width: var(--stroke-width);
   }
+
+
+  @media screen and (max-width: 480 ){
+    .units {
+      width: 0;
+      height: 0;
+      color: 0;
+    }
+  }

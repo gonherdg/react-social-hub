@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { deepPurple } from "@material-ui/core/colors";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 export default makeStyles((theme) => ({
     appBar: {
@@ -9,7 +10,7 @@ export default makeStyles((theme) => ({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "10px 50px",
+        padding: "10px 15px",
     },
     heading: {
         color: "rgba(0,183,255, 1)",
@@ -36,6 +37,14 @@ export default makeStyles((theme) => ({
     brandContainer: {
         display: "flex",
         alignItems: "center",
+        [theme.breakpoints.down("xs")]: {
+            minWidth: 0,
+        },
+    },
+    sep: {
+        [theme.breakpoints.down("xs")]: {
+            visibility: "hidden",
+        },
     },
     purple: {
         color: theme.palette.getContrastText(deepPurple[500]),

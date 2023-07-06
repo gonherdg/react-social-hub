@@ -75,14 +75,16 @@ const Navbar = () => {
                         </div>
                     )
                 }
-                <div className="sep">
-                    <Typography
-                        component={Link}
-                        to="/"
-                        className="h1"
-                        variant="h2">
-                        Social Hub
-                    </Typography>
+                <div className={classes.sep}>
+                    <div className="sep">
+                        <Typography
+                            component={Link}
+                            to="/"
+                            className="h1"
+                            variant="h2">
+                            Social Hub
+                        </Typography>
+                    </div>
                 </div>
             </div>
             <Toolbar className={classes.toolbar}>

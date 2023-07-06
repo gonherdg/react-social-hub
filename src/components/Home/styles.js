@@ -1,11 +1,25 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
+    appBarContainer: {
+        [theme.breakpoints.between("sm", "sm")]: {
+            display: "flex",
+            justifyContent: "space-between",
+        },
+    },
     appBarSearch: {
         borderRadius: 4,
         marginBottom: "1rem",
         display: "flex",
         padding: "16px",
+        [theme.breakpoints.between("sm", "sm")]: {
+            maxWidth: "48%",
+        },
+    },
+    rightPart: {
+        [theme.breakpoints.between("sm", "sm")]: {
+            maxWidth: "48%",
+        },
     },
     pagination: {
         borderRadius: 4,
@@ -14,6 +28,9 @@ export default makeStyles((theme) => ({
     },
     gridContainer: {
         [theme.breakpoints.down("xs")]: {
+            flexDirection: "column-reverse",
+        },
+        [theme.breakpoints.down("sm")]: {
             flexDirection: "column-reverse",
         },
     },
