@@ -5,12 +5,12 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 export default makeStyles((theme) => ({
     appBar: {
         borderRadius: 15,
-        margin: "15px 0px",
+        margin: "10px 0px 18px 0",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "10px 15px",
+        padding: "10px 16px",
     },
     heading: {
         color: "rgba(0,183,255, 1)",
@@ -27,7 +27,7 @@ export default makeStyles((theme) => ({
         justifyContent: "flex-end",
         minWidth: "200px",
         paddingLeft: "10px",
-        paddingRight: "32px",
+        paddingRight: "10px",
     },
     profile: {
         display: "flex",

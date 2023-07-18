@@ -8,8 +8,7 @@ export default makeStyles((theme) => ({
         },
     },
     paper: {
-        padding: theme.spacing(1),
-        marginBottom: 10,
+        padding: theme.spacing(2),
         display: "flex",
     },
     form: {
@@ -27,17 +26,17 @@ export default makeStyles((theme) => ({
     },
     pleaseSignIn: {
         fontSize: "13px",
-        color: theme.palette.primary,
+        color: theme.palette.text.hint,
         textAlign: "center",
-        flex: 0.9,
+        flex: 2,
+        padding: "0 23px 0 23px",
     },
     pleaseSignInClose: {
+        position: "absolute",
         cursor: "pointer",
-        alignSelf: "center",
-        textAlign: "center",
-        color: theme.palette.primary,
         color: theme.palette.primary.main,
-        flex: 0.1,
+        right: "34px",
+        margin: "-2px 0 0px 0px",
         [theme.breakpoints.down("xs")]: {
             fontSize: "16px",
         },

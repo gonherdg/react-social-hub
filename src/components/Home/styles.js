@@ -51,7 +51,7 @@ export default makeStyles((theme) => ({
     paginationBottom: {
         borderRadius: 4,
         marginTop: "1rem",
-        padding: "12px",
+        padding: "6px",
         [theme.breakpoints.up("md")]: {
             display: "none",
         },

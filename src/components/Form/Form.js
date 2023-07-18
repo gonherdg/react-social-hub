@@ -78,9 +78,7 @@ const Form = ({ currentId, setCurrentId }) => {
                 <div
                     className={classes.pleaseSignInClose}
                     onClick={closeSignInMessageBox}>
-                    <span>
-                        <ClearOutlinedIcon />
-                    </span>
+                    <ClearOutlinedIcon />
                 </div>
             </Paper>
         );
