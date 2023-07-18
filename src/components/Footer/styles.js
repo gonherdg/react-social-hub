@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
     background: {
-        backgroundColor: theme.palette.grey[800],
+        backgroundColor: theme.palette.background.paper,
         minHeight: "340px",
         marginTop: "100px",
         display: "flex",

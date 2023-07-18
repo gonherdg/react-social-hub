@@ -8,12 +8,30 @@ import {
 } from "redux";
 import thunk from "redux-thunk";
 import "./index.css";
-
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import { colors } from "@material-ui/core";
 import reducers from "./reducers";
 
 import App from "./App";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+// Material UI theming
+const theme = createTheme({
+    palette: {
+        type: "dark",
+        background: {
+            default: "#010101",
+            paper: colors.grey[900],
+        },
+        primary: {
+            main: colors.orange[500],
+        },
+        secondary: {
+            main: colors.blue[300],
+        },
+    },
+});
 
 const store = createStore(
     reducers,
@@ -23,6 +41,8 @@ const store = createStore(
 const root = ReactDom.createRoot(document.getElementById("root"));
 root.render(
     <Provider store={store}>
-        <App />
+        <ThemeProvider theme={theme}>
+            <App />
+        </ThemeProvider>
     </Provider>
 );

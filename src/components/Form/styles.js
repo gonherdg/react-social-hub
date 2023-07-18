@@ -1,4 +1,4 @@
-import { grey } from "@material-ui/core/colors";
+import { colors } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
@@ -27,7 +27,7 @@ export default makeStyles((theme) => ({
     },
     pleaseSignIn: {
         fontSize: "13px",
-        color: grey[700],
+        color: theme.palette.primary,
         textAlign: "center",
         flex: 0.9,
     },
@@ -35,7 +35,8 @@ export default makeStyles((theme) => ({
         cursor: "pointer",
         alignSelf: "center",
         textAlign: "center",
-        color: grey[700],
+        color: theme.palette.primary,
+        color: theme.palette.primary.main,
         flex: 0.1,
         [theme.breakpoints.down("xs")]: {
             fontSize: "16px",

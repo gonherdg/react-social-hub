@@ -8,6 +8,7 @@ import memories from "../../images/picnic.png";
 import friendshipIcon from "../../images/friendship.png";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import LogoutOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
+import AccountIcon from "@material-ui/icons/AccountCircleRounded";
 import useStyles from "./styles";
 import "../../index.css";
 import "./style.css";
@@ -97,14 +98,19 @@ const Navbar = () => {
             </div>
             <Toolbar className={classes.toolbar}>
                 {currentPage === "posts" && (
-                    <SearchOutlinedIcon
+                    <Button
+                        onClick={glassClick}
+                        variant="contained"
+                        color={"success"}
                         className={
-                            !showSearchWindow
-                                ? classes.glass
-                                : classes.activeGlass
-                        }
-                        onClick={glassClick}></SearchOutlinedIcon>
+                            showSearchWindow
+                                ? classes.activeGlass
+                                : classes.glass
+                        }>
+                        <SearchOutlinedIcon></SearchOutlinedIcon>
+                    </Button>
                 )}
+                <div className={classes.space}></div>
                 {user ? (
                     <div className={classes.profile}>
                         {user.sub !== undefined && (
@@ -138,7 +144,7 @@ const Navbar = () => {
                         variant="contained"
                         color="primary"
                         className={classes.signIn}>
-                        Sign in
+                        <AccountIcon></AccountIcon>
                     </Button>
                 )}
             </Toolbar>

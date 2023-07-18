@@ -26,6 +26,8 @@ export default makeStyles((theme) => ({
         flexBasis: 0.2,
         justifyContent: "flex-end",
         minWidth: "200px",
+        paddingLeft: "10px",
+        paddingRight: "32px",
     },
     profile: {
         display: "flex",
@@ -63,19 +65,22 @@ export default makeStyles((theme) => ({
         },
     },
     signIn: {
-        backgroundColor: "#FFF",
-        color: "#3F51B5",
+        "&:hover": {
+            backgroundColor: theme.palette.action.hover,
+        },
+        backgroundColor: theme.palette.background.paper,
+        color: theme.palette.primary.main,
         "&:active": {
             backgroundColor: "#3F51B5",
             color: "#FFF",
         },
-        "&:focus": {
-            backgroundColor: "#FFF",
-        },
     },
     glass: {
-        color: "#3F51B5",
-        marginRight: "16px",
+        "&:hover": {
+            backgroundColor: theme.palette.action.hover,
+        },
+        backgroundColor: theme.palette.background.paper,
+        color: theme.palette.primary.main,
         width: "35px",
         height: "35px",
         padding: "5px",
@@ -85,9 +90,7 @@ export default makeStyles((theme) => ({
     },
     activeGlass: {
         color: "#FFF",
-        backgroundColor: "#3F51B5",
-        borderRadius: "12px",
-        marginRight: "16px",
+        backgroundColor: theme.palette.primary.main, // "#3F51B5",
         width: "35px",
         height: "35px",
         padding: "5px",
@@ -104,5 +107,8 @@ export default makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             display: "none",
         },
+    },
+    space: {
+        margin: 15,
     },
 }));
