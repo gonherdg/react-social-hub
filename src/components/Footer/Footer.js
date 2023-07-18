@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import React, { useState, useRef, useEffect } from "react";
 import { Typography, TextField, Button } from "@material-ui/core";
+import InternetIcon from "@material-ui/icons/Link";
 import { useDispatch } from "react-redux";
 
 import useStyles from "./styles";
@@ -16,19 +17,26 @@ const Footer = () => {
 
     return (
         <div className={classes.background}>
+            <br />
+            <br />
             <div className={classes.text}>
-                built by Gonzalo Del Gaudio. 2023.
-            </div>
-            <div className={classes.text}>
+                Built by Gonzalo Del Gaudio
+                <br />
+                <br />
+                2023
+                <br />
+                <br />
+                <InternetIcon className={classes.icon}></InternetIcon>
                 <a
-                    className={classes.text}
+                    className={classes.hyperlink}
                     rel="noreferrer"
                     target="_blank"
                     href="https://gonherdg.github.io">
                     <strong>gonherdg.github.io</strong>
                 </a>
             </div>
-            <div className={classes.text}></div>
+            <br />
+            <br />
         </div>
     );
 };

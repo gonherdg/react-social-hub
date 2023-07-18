@@ -19,14 +19,33 @@ export default makeStyles((theme) => ({
     text: {
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
         fontSize: "19px",
-        color: theme.palette.grey[50],
+        color: theme.palette.text.hint,
         textDecoration: "none",
         margin: "8px",
+        textAlign: "center",
         [theme.breakpoints.down("sm")]: {
             fontSize: "16px",
         },
         [theme.breakpoints.down("xs")]: {
             fontSize: "13px",
         },
+    },
+    hyperlink: {
+        "&:hover": {
+            textDecoration: "underline",
+            color: theme.palette.text.primary,
+        },
+        color: theme.palette.text.hint,
+        textDecoration: "none",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "16px",
+        },
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "13px",
+        },
+    },
+    icon: {
+        verticalAlign: "middle",
+        margin: "0 4px 0 0",
     },
 }));
