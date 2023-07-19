@@ -9,6 +9,7 @@ import friendshipIcon from "../../images/friendship.png";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import LogoutOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
 import AccountIcon from "@material-ui/icons/AccountCircleRounded";
+import SupervisedUserCircleIcon from "@material-ui/icons/People";
 import useStyles from "./styles";
 import "../../index.css";
 import "./style.css";
@@ -64,11 +65,16 @@ const Navbar = () => {
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.brandContainer}>
                 <Typography component={Link} to="/">
-                    <img
-                        className={classes.image}
-                        src={friendshipIcon}
-                        alt="memories"
-                        height="60"></img>
+                    {
+                        !(
+                            <img
+                                className={classes.image}
+                                src={friendshipIcon}
+                                alt="memories"
+                                height="60"></img>
+                        )
+                    }
+                    <SupervisedUserCircleIcon className={classes.muImage} />
                 </Typography>
                 {
                     !(

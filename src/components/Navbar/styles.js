@@ -21,6 +21,13 @@ export default makeStyles((theme) => ({
         marginLeft: "0px",
         marginTop: "7px",
     },
+    muImage: {
+        marginLeft: "0px",
+        marginTop: "7px",
+        height: "60px",
+        width: "60px",
+        color: theme.palette.primary.main,
+    },
     toolbar: {
         display: "flex",
         flexBasis: 0.2,
@@ -56,6 +63,9 @@ export default makeStyles((theme) => ({
             visibility: "hidden",
             width: "10px",
         },
+    },
+    h1: {
+        //background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
     },
     purple: {
         color: theme.palette.getContrastText(deepPurple[500]),

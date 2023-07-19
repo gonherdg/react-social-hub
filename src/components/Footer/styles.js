@@ -2,8 +2,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
     background: {
-        backgroundColor: theme.palette.background.paper,
-        minHeight: "340px",
+        backgroundColor: theme.palette.primary.main,
+        minHeight: "260px",
         marginTop: "100px",
         display: "flex",
         flexDirection: "column",
@@ -19,7 +19,7 @@ export default makeStyles((theme) => ({
     text: {
         fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
         fontSize: "19px",
-        color: theme.palette.text.hint,
+        color: theme.palette.grey[800],
         textDecoration: "none",
         margin: "8px",
         textAlign: "center",
@@ -33,9 +33,9 @@ export default makeStyles((theme) => ({
     hyperlink: {
         "&:hover": {
             textDecoration: "underline",
-            color: theme.palette.text.primary,
+            color: theme.palette.grey[900],
         },
-        color: theme.palette.text.hint,
+        color: theme.palette.grey[800],
         textDecoration: "none",
         [theme.breakpoints.down("sm")]: {
             fontSize: "16px",
