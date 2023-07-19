@@ -23,7 +23,7 @@ export default makeStyles((theme) => ({
     },
     submit: {},
     googleButton: {
-        width: "100%",
+        maxWidth: "100%",
     },
 
     signinBlock: {

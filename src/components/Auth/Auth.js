@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
     Avatar,
     Button,
@@ -14,7 +14,6 @@ import { useHistory } from "react-router-dom";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import useStyles from "./styles";
 import Input from "./Input";
-import Icon from "./icon";
 import { signin, signup } from "../../actions/auth";
 
 const initialState = {
@@ -32,6 +31,18 @@ const Auth = () => {
     const [formData, setFormData] = useState(initialState);
     const dispatch = useDispatch();
     const history = useHistory();
+    const ref = useRef(null);
+    const [dimensions, setDimensions] = React.useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+    });
+
+    const handleResize = () => {
+        setDimensions({
+            width: window.innerWidth,
+            height: window.innerHeight,
+        });
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -73,6 +84,13 @@ const Auth = () => {
         console.log(error);
         console.log("Google Sign In was unsuccessful. Try Again Later");
     };
+
+    useEffect(() => {
+        setTimeout(() => {
+            setDimensions(100);
+        }, 10);
+        window.addEventListener("resize", handleResize, false);
+    }, []);
 
     return (
         <Container component="main" maxWidth="xs">
@@ -123,7 +141,7 @@ const Auth = () => {
                                 type="password"
                             />
                         )}
-                        <div className={classes.signinBlock}>
+                        <div className={classes.signinBlock} ref={ref}>
                             <Button
                                 type="submit"
                                 fullWidth
@@ -135,7 +153,9 @@ const Auth = () => {
                             <div className={classes.hbar}></div>
                             <GoogleLogin
                                 size={"large"}
-                                width={"361"}
+                                width={
+                                    ref.current ? ref.current.offsetWidth : 0
+                                }
                                 theme={"filled_blue"}
                                 text={isSignup ? "signup_with" : "signin_with"}
                                 className={classes.googleButton}
@@ -143,26 +163,6 @@ const Auth = () => {
                                 onError={googleFailure}
                             />
                         </div>
-                        {false && (
-                            <GoogleLogin
-                                clientId="871267271584-csn1baa9c9b1gop2i56kgjklq4go9nfh.apps.googleusercontent.com"
-                                render={(renderProps) => (
-                                    <Button
-                                        className={classes.googleButton}
-                                        color="primary"
-                                        fullWidth
-                                        onClick={renderProps.onClick}
-                                        disabled={renderProps.disabled}
-                                        startIcon={<Icon />}
-                                        variant="contained">
-                                        Google Sign In
-                                    </Button>
-                                )}
-                                onSuccess={googleSuccess}
-                                onFailure={googleFailure}
-                                cookiePolicy="single_host_origin"
-                            />
-                        )}
 
                         <div className={classes.already}>
                             <Button onClick={switchMode}>
