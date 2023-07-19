@@ -107,7 +107,7 @@ const Navbar = () => {
                     <Button
                         onClick={glassClick}
                         variant="contained"
-                        color={"success"}
+                        color={"primary"}
                         className={
                             showSearchWindow
                                 ? classes.activeGlass

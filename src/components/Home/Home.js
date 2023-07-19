@@ -64,7 +64,7 @@ const Home = () => {
 
     return (
         <Grow in>
-            <div maxWidth="xl">
+            <Container maxWidth="xl" disableGutters={true}>
                 <Grid
                     container
                     justifyContent="space-between"
@@ -81,7 +81,7 @@ const Home = () => {
                             </Paper>
                         )
                     }
-                    <Grid item spacing={2} xs={12} sm={12} md={9}>
+                    <Grid item xs={12} sm={12} md={9}>
                         <Posts setCurrentId={setCurrentId}></Posts>
                     </Grid>
                     <Grid
@@ -149,7 +149,7 @@ const Home = () => {
                         </div>
                     </Grid>
                 </Grid>
-            </div>
+            </Container>
         </Grow>
     );
 };
