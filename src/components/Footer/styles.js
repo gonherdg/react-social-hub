@@ -27,7 +27,7 @@ export default makeStyles((theme) => ({
             fontSize: "16px",
         },
         [theme.breakpoints.down("xs")]: {
-            fontSize: "13px",
+            fontSize: "15px",
         },
     },
     hyperlink: {
@@ -41,7 +41,7 @@ export default makeStyles((theme) => ({
             fontSize: "16px",
         },
         [theme.breakpoints.down("xs")]: {
-            fontSize: "13px",
+            fontSize: "15px",
         },
     },
     icon: {

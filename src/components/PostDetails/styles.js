@@ -16,8 +16,10 @@ export default makeStyles((theme) => ({
         },
     },
     section: {
+        fontSize: "19px",
         borderRadius: "20px",
         margin: "10px",
+        marginTop: "30px",
         flex: 1,
     },
     imageSection: {
