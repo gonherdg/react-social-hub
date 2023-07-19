@@ -15,7 +15,7 @@ export default makeStyles((theme) => ({
     },
     avatar: {
         margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: theme.palette.primary.main,
     },
     form: {
         width: "100%", // Fix IE 11 issue.
@@ -23,13 +23,15 @@ export default makeStyles((theme) => ({
     },
     submit: {},
     googleButton: {
-        maxWidth: "70%",
+        width: "100%",
     },
 
     signinBlock: {
-        width: "100%",
+        width: "95%",
         height: 130,
         margin: theme.spacing(3, 0, 3),
+        marginLeft: "auto",
+        marginRight: "auto",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -38,7 +40,7 @@ export default makeStyles((theme) => ({
     hbar: {
         heigth: 10,
         padding: 1,
-        width: "90%",
+        width: "75%",
         backgroundColor: "#ccc",
     },
     signInButton: {
@@ -48,5 +50,8 @@ export default makeStyles((theme) => ({
         [theme.breakpoints.down("xs")]: {
             fontSize: "16px",
         },
+    },
+    already: {
+        margin: "auto",
     },
 }));

@@ -20,7 +20,7 @@ const Input = ({
                 onChange={handleChange}
                 variant="outlined"
                 required
-                fullwidth="true"
+                fullWidth
                 label={label}
                 autoFocus={autoFocus}
                 type={type}

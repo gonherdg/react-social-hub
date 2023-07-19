@@ -126,7 +126,7 @@ const Auth = () => {
                         <div className={classes.signinBlock}>
                             <Button
                                 type="submit"
-                                fullwidth="true"
+                                fullWidth
                                 variant="contained"
                                 color="primary"
                                 className={classes.submit}>
@@ -134,6 +134,10 @@ const Auth = () => {
                             </Button>
                             <div className={classes.hbar}></div>
                             <GoogleLogin
+                                size={"large"}
+                                width={"361"}
+                                theme={"filled_blue"}
+                                text={isSignup ? "signup_with" : "signin_with"}
                                 className={classes.googleButton}
                                 onSuccess={googleSuccess}
                                 onError={googleFailure}
@@ -146,7 +150,7 @@ const Auth = () => {
                                     <Button
                                         className={classes.googleButton}
                                         color="primary"
-                                        fullwidth="true"
+                                        fullWidth
                                         onClick={renderProps.onClick}
                                         disabled={renderProps.disabled}
                                         startIcon={<Icon />}
@@ -160,13 +164,13 @@ const Auth = () => {
                             />
                         )}
 
-                        <Grid item>
+                        <div className={classes.already}>
                             <Button onClick={switchMode}>
                                 {isSignup
                                     ? "Already have an account? Sign in"
                                     : "Don't have an account? Sign up"}
                             </Button>
-                        </Grid>
+                        </div>
                     </Grid>
                 </form>
             </Paper>
