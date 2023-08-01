@@ -7,6 +7,7 @@ import { SHOW_SIGNIN_MESSAGE } from "../../constants/actionTypes";
 import ClearOutlinedIcon from "@material-ui/icons/Close";
 
 import useStyles from "./styles";
+import "./fileInputStyle.css";
 import { createPost, updatePost } from "../../actions/posts";
 
 const Form = ({ currentId, setCurrentId }) => {
@@ -89,7 +90,7 @@ const Form = ({ currentId, setCurrentId }) => {
     }
 
     return (
-        <Paper className={classes.paper} elevation={3}>
+        <Paper elevation={3}>
             <form
                 autoComplete="off"
                 noValidate
@@ -102,7 +103,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     name="title"
                     variant="outlined"
                     label="Title"
-                    fullwidth="true"
+                    fullWidth
                     value={postData.title}
                     onChange={(e) =>
                         setPostData({ ...postData, title: e.target.value })
@@ -112,7 +113,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     name="message"
                     variant="outlined"
                     label="Message"
-                    fullwidth="true"
+                    fullWidth
                     value={postData.message}
                     onChange={(e) =>
                         setPostData({ ...postData, message: e.target.value })
@@ -122,7 +123,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     name="tags"
                     variant="outlined"
                     label="Tags"
-                    fullwidth="true"
+                    fullWidth
                     value={postData.tags}
                     onChange={(e) =>
                         setPostData({
@@ -131,7 +132,7 @@ const Form = ({ currentId, setCurrentId }) => {
                         })
                     }></TextField>
 
-                <div className={classes.fileInput}>
+                <div className={"file_input-container"}>
                     <FileBase
                         type="file"
                         multiple={false}
@@ -146,7 +147,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     color="primary"
                     size="large"
                     type="submit"
-                    fullwidth="true">
+                    fullWidth>
                     Submit
                 </Button>
                 <Button
@@ -155,7 +156,7 @@ const Form = ({ currentId, setCurrentId }) => {
                     color="secondary"
                     size="small"
                     onClick={clear}
-                    fullwidth="true">
+                    fullWidth>
                     Clear
                 </Button>
             </form>
