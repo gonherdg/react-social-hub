@@ -43,6 +43,7 @@ export default makeStyles((theme) => ({
     userName: {
         display: "flex",
         alignItems: "center",
+        color: theme.palette.grey[200],
         [theme.breakpoints.down("sm")]: {
             display: "none",
         },
