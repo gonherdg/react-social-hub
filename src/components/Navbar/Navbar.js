@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { LOGOUT, SHOW_SEARCH_WINDOW } from "../../constants/actionTypes";
 import decode from "jwt-decode";
 import memories from "../../images/picnic.png";
+import distanceIcon from "../../images/distance_orange.png";
 import friendshipIcon from "../../images/friendship.png";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import LogoutOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
@@ -66,15 +67,14 @@ const Navbar = () => {
             <div className={classes.brandContainer}>
                 <Typography component={Link} to="/">
                     {
-                        !(
+                        (
                             <img
                                 className={classes.image}
-                                src={friendshipIcon}
+                                src={distanceIcon}
                                 alt="memories"
                                 height="60"></img>
                         )
                     }
-                    <SupervisedUserCircleIcon className={classes.muImage} />
                 </Typography>
                 {
                     !(
